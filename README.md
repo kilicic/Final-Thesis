@@ -1,6 +1,6 @@
-# Završni rad - Klara Iličić
+# Završni rad 
 
-Završni rad - Klara Iličić
+Završni rad - Klara Iličić, ak. godina 2021./2022.
 
 ## Getting started
 
