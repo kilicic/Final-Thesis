@@ -92,21 +92,15 @@ class HomePage extends Component {
                  
               }
       }  
-     
-
       }
       else if(input1 === "category") { 
           this.setState({category: input2})
 
       }
-
       else if(input1 === "group") { 
         this.setState({group:input2})
 
       }
-
-
-      
       console.log(this.state)   
   }
 

@@ -23,11 +23,7 @@ class CategoryList extends Component {
       console.log(event.target.value)
       helper = checkedCat+ " "
       this.setState({categories:this.state.categories+helper});
-    }
-    
-   
-    console.log(this.state)
-    
+    }    
   }
 
 
