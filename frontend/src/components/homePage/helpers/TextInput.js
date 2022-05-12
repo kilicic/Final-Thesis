@@ -19,11 +19,6 @@ class TextInput extends Component {
             onChange={this.props.onInputChange}>
             </input>
         </form>
-        <div className='frame-button'> 
-        <hr/>
-        <button className='button-desc'>Spremi</button>
-         </div>
-
         </div>
     );
    }

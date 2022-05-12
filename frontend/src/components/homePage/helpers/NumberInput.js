@@ -13,36 +13,33 @@ class NumberInput extends Component {
         }
     }
     render() {
+        let { onInputChange } = this.props
     return (
         <form className="form-input-number">
             <input type="text"
                 className="number-input"
-                onChange={(event) => {this.onInputChange(`minM`, event)}}>
+                onChange={(event) => {onInputChange(this.props.emotion,`minM`, event)}}>
             </input>
             <span>M</span>
             <input type="text"
                 className="number-input"
-                onChange={(event) => {this.onInputChange(`maxM`, event)}}>
+                onChange={(event) => {onInputChange(this.props.emotion,`maxM`, event)}}>
             </input>
             <div className="space"></div>
 
             <input type="text"
                 className="number-input"
-                onChange={(event) => {this.onInputChange(`minSD`, event)}}>
+                onChange={(event) => {onInputChange(this.props.emotion,`minSD`, event)}}>
             </input>
             
             <span>SD</span>
             <input type="text"
                 className="number-input"
-                onChange={(event) => {this.onInputChange(`maxSD`, event)}}>
+                onChange={(event) => {onInputChange(this.props.emotion,`maxSD`, event)}}>
             </input>
         </form>
     );
     }
-    onInputChange = (key, event) => {
-        this.setState({[key] : event.target.value})
-        console.log(`SET ${key} as: ${event.target.value}`)
-        console.log(this.state)
-    }
+
 }
 export default NumberInput;

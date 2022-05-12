@@ -6,12 +6,53 @@ import './BeForm.css'
 class BeForm extends Component { 
   constructor() { 
     super();
+    this.state = {
+      happiness: { 
+        minM: '', 
+        maxM: '',
+        minSD: '',
+        maxSD: ''
+      }, 
+      fear: { 
+        minM: '', 
+        maxM: '',
+        minSD: '',
+        maxSD: ''
+      }, 
+      sadness: { 
+        minM: '', 
+        maxM: '',
+        minSD: '',
+        maxSD: ''
+      }, 
+      surprise: { 
+        minM: '', 
+        maxM: '',
+        minSD: '',
+        maxSD: ''
+      },  
+      disgust: { 
+        minM: '', 
+        maxM: '',
+        minSD: '',
+        maxSD: ''
+      }, 
+      anger: { 
+        minM: '', 
+        maxM: '',
+        minSD: '',
+        maxSD: ''
+      }
+  }
 
   }
-  onInputChange = (key, event) => {
-    this.setState({[key] : event.target.value})
-    console.log(`SET ${key} as: ${event.target.value}`)
-    console.log(this.state)
+  onInputChange = (key, attribute, event) => {
+    let keyAttribute = this.state[key]
+    /*console.log(keyAttribute)*/
+    keyAttribute[attribute]=event.target.value
+    this.setState({[key]: keyAttribute })
+    /*console.log(this.state)*/
+    
 }
 
   render() {
@@ -21,7 +62,7 @@ class BeForm extends Component {
       <div className='containerForm'>
           <div className='element'>
           <div className='title'>Happiness</div>
-      <NumberInput emotion="happines" onInputChange = {this.onInputChange}></NumberInput>
+      <NumberInput emotion="happiness" onInputChange = {this.onInputChange}></NumberInput>
  
       </div>
       
@@ -52,7 +93,7 @@ class BeForm extends Component {
       
       <div className='frame'>
       <hr/>
-      <button className='button'>Spremi</button>
+      <button className='button' onClick={()=>this.props.onClickSave("be", this.state)}>Spremi</button>
       </div>
       </div>
     </div>

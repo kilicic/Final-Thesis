@@ -12,7 +12,7 @@ class NameForm extends Component {
 
   onInputChange = (event) =>{
     this.setState({inputValue: event.target.value});
-    console.log(this.state);
+    /*console.log(this.state);*/
 }
  
   render() {
@@ -20,6 +20,10 @@ class NameForm extends Component {
     <div className='container-input'>
       <h1>Unesite naziv</h1>
       <TextInput optionField = "name" onInputChange = {this.onInputChange}></TextInput>
+      <div className='frame-button'> 
+        <hr/>
+        <button className='button-desc' onClick={()=>this.props.onClickSave(this.state.optionField, this.state.inputValue)}>Spremi</button>
+         </div>
     </div>
   )
 }

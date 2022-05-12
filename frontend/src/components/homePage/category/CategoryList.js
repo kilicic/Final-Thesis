@@ -6,14 +6,28 @@ class CategoryList extends Component {
   constructor() { 
     super(); 
     this.state = {
-     
+      categories: ""
+       
     }
   }
 
   handleCheckbox = event => { 
-    console.log(event.target.value)
-    this.setState({categories: this.state.categories + event.target.value});
+    let checkedCat = event.target.value
+    let previous = this.state.categories;
+    if(previous.includes(checkedCat)) { 
+      let newCat = previous.replace(checkedCat, '');
+      this.setState({categories:newCat});
+    }
+    else {
+      let helper = ""
+      console.log(event.target.value)
+      helper = checkedCat+ " "
+      this.setState({categories:this.state.categories+helper});
+    }
+    
+   
     console.log(this.state)
+    
   }
 
 
@@ -31,10 +45,6 @@ class CategoryList extends Component {
                     name={name}
                     value={id}
                     onChange={this.handleCheckbox}
-                    /*onClick={()=>{
-                      this.setState({categories: this.name})
-                      console.log(this.value)
-                    }}*/
                   /><label htmlFor={id}>{name}</label>
                 </div>
             </li>
@@ -42,7 +52,7 @@ class CategoryList extends Component {
         })}
         </ul> 
         <hr/>
-        <button className='button'>Spremi</button>
+        <button className='button' onClick={()=>this.props.onClickSave("category", this.state.categories)}>Spremi</button>
       </div>
     );
       }
