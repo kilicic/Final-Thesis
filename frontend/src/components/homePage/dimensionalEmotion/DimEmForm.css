@@ -1,0 +1,49 @@
+.containerForm { 
+    /*border: 3px solid black;*/
+    margin: 0px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    
+ }
+ 
+ .title { 
+     display: flex;
+     margin: 0px;
+     width: 50%;
+     font-family: 'Kanit', sans-serif;
+     font-size: large;
+     align-items: center;
+ }
+ 
+ .element { 
+     display: flex;
+     height: 45px;
+     justify-content: space-between;
+     flex: 1,1;
+ } 
+ 
+ .button { 
+    
+       align-items: center;
+       background: #FFFFFF;
+       border: 0.1 solid #e3eaef;
+       box-shadow: 0 4px 6px -1px rgba(239, 234, 234, 0.1), 0 2px 4px -1px rgba(151, 150, 150, 0.06);
+       box-sizing: border-box;
+       color: #1A202C;
+       display: inline-flex;
+       font-family: 'Kanit', sans-serif;
+       font-size: 15px;
+       font-weight: 400;
+       height: 30px;
+       justify-content: center;
+       line-height: 24px;
+       padding: 4px;
+       text-decoration: none;
+       width: 100px;
+       border-radius: 8px;
+       cursor: pointer;
+       user-select: none;
+       -webkit-user-select: none;
+       touch-action: manipulation;  
+ }
