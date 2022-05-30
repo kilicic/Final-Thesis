@@ -24,7 +24,8 @@ class HomePage extends Component {
           disgust: "", 
           anger: "", 
           arousal: "",
-          valence: "", 
+          valence: "",
+          approachavoidance:"", 
           category: "", 
           group: ""
       }
@@ -47,22 +48,22 @@ class HomePage extends Component {
                    upis += attr + " " + currentEmotion[attr] + "; "
                    switch (emo) { 
                        case "happiness": 
-                           this.setState({happiness:upis.substring(0,upis.length-1)})
+                           this.setState({happiness:upis.substring(0,upis.length-2)})
                            break;
                        case "fear":
-                           this.setState({fear:upis.substring(0,upis.length-1)})
+                           this.setState({fear:upis.substring(0,upis.length-2)})
                            break;
                        case "sadness":
-                            this.setState({sadness:upis.substring(0,upis.length-1)})
+                            this.setState({sadness:upis.substring(0,upis.length-2)})
                             break; 
                        case "surprise":
-                            this.setState({surprise:upis.substring(0,upis.length-1)})
+                            this.setState({surprise:upis.substring(0,upis.length-2)})
                             break;
                        case "disgust":
-                            this.setState({disgust:upis.substring(0,upis.length-1)}) 
+                            this.setState({disgust:upis.substring(0,upis.length-2)}) 
                             break;
                        case "anger":
-                            this.setState({anger:upis.substring(0,upis.length-1)})
+                            this.setState({anger:upis.substring(0,upis.length-2)})
                             break;
                         default:
                             console.log(emo);
@@ -81,10 +82,13 @@ class HomePage extends Component {
                  upis += attr + " " + currentEmotion[attr] + "; "
                  switch (emo) { 
                      case "valence": 
-                         this.setState({valence:upis.substring(0,upis.length-1)})
+                         this.setState({valence:upis.substring(0,upis.length-2)})
                          break;
                      case "arousal":
-                         this.setState({arousal:upis.substring(0,upis.length-1)})
+                         this.setState({arousal:upis.substring(0,upis.length-2)})
+                         break;
+                     case "approachavoidance":
+                         this.setState({approachavoidance:upis.substring(0,upis.length-2)})
                          break;
                       default:
                           console.log(emo);
@@ -94,21 +98,45 @@ class HomePage extends Component {
       }  
       }
       else if(input1 === "category") { 
-          this.setState({category: input2})
+          this.setState({category: input2.substring(0,input2.length-1)})
 
       }
       else if(input1 === "group") { 
-        this.setState({group:input2})
+        this.setState({group:input2.substring(0,input2.length-1)})
 
       }
       console.log(this.state)   
+  }
+
+  submitSearch = () => { 
+    fetch('http://localhost:5000/gallery', {
+        method: 'post',
+        headers: {'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            name: this.state.name,
+            description: this.state.description,
+            happiness: this.state.happiness,
+            fear: this.state.fear,
+            sadness: this.state.sadness,
+            surprise: this.state.surprise,  
+            disgust: this.state.disgust,
+            anger: this.state.anger,
+            arousal: this.state.arousal,
+            valence: this.state.valence,
+            approachavoidance: this.state.approachavoidance, 
+            category: this.state.category, 
+            group: this.state.group
+        })
+    }).then(res => console.log(res.json()))
+    
   }
 
 
    render() {
     return(
         <div  className="sve">
-        <TitleNaps></TitleNaps>
+        <TitleNaps submitSearch={this.submitSearch}></TitleNaps>
         <NavigationBar>
             <button className="icon-button" onClick={() => this.setState({active: "categoryList"})}>Kategorija</button>
             <button className="icon-button" onClick={() => this.setState({active: "sexList"})}>Spol</button>

@@ -18,6 +18,12 @@ class DimEmForm extends Component {
         maxM: '',
         minSD: '',
         maxSD: ''
+      },
+      approachavoidance: { 
+        minM: '', 
+        maxM: '',
+        minSD: '',
+        maxSD: ''
       }
   }
 
@@ -45,6 +51,11 @@ class DimEmForm extends Component {
       <div className='element'>
       <div className='title'>Arousal</div>
       <NumberInput emotion="arousal" onInputChange = {this.onInputChange}></NumberInput>
+      </div>
+
+      <div className='element'>
+      <div className='title'>Approach-avoidance</div>
+      <NumberInput emotion="approachavoidance" onInputChange = {this.onInputChange}></NumberInput>
       </div>
    
       <div className='frame'>

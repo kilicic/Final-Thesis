@@ -3,7 +3,7 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": 0,
+    "scrollTop": -516.4800197021489,
     "scrollLeft": 0,
     "zoomLevel": 1,
     "show": {
@@ -96,8 +96,8 @@
         "ui": {
           "active": false,
           "left": 584.8329,
-          "top": 563.4734,
-          "zIndex": 3,
+          "top": 585.8737,
+          "zIndex": 4,
           "widthName": 60,
           "widthComment": 60,
           "color": "#8E00FF"
@@ -160,7 +160,7 @@
           "active": false,
           "left": 220.9118,
           "top": 737.6443,
-          "zIndex": 4,
+          "zIndex": 1,
           "widthName": 60,
           "widthComment": 60,
           "color": "#2F00FF"
@@ -338,7 +338,7 @@
           "active": false,
           "left": 565.2805,
           "top": 833.4292,
-          "zIndex": 1,
+          "zIndex": 3,
           "widthName": 60,
           "widthComment": 60,
           "color": "#00F5FF"
@@ -441,13 +441,151 @@
               "widthDefault": 60
             },
             "id": "e7194421-928d-4522-9433-74d5f2e7b135"
+          },
+          {
+            "name": "luminance",
+            "comment": "",
+            "dataType": "NUMERIC(9,4)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 65.82994079589844,
+              "widthComment": 60,
+              "widthDataType": 87.26692199707031,
+              "widthDefault": 60
+            },
+            "id": "046f7637-a4b1-48f8-bb11-4528509fe656"
+          },
+          {
+            "name": "contrast",
+            "comment": "",
+            "dataType": "NUMERIC(9,4)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 87.26692199707031,
+              "widthDefault": 60
+            },
+            "id": "9b9a545c-b2e0-4b5b-8858-0b094ccd6997"
+          },
+          {
+            "name": "labl",
+            "comment": "",
+            "dataType": "NUMERIC(9,4)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 87.26692199707031,
+              "widthDefault": 60
+            },
+            "id": "5f70f9be-fd03-4794-be69-113bfbd49e71"
+          },
+          {
+            "name": "laba",
+            "comment": "",
+            "dataType": "NUMERIC(9,4)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 87.26692199707031,
+              "widthDefault": 60
+            },
+            "id": "f97cbedb-cff5-46fb-af5b-d9797dc5cd63"
+          },
+          {
+            "name": "labb",
+            "comment": "",
+            "dataType": "NUMERIC(9,4)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 87.26692199707031,
+              "widthDefault": 60
+            },
+            "id": "878a4bcf-4c54-4fa4-9601-a359a69fec17"
+          },
+          {
+            "name": "entropy",
+            "comment": "",
+            "dataType": "NUMERIC(9,4)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 87.26692199707031,
+              "widthDefault": 60
+            },
+            "id": "c602540b-70f9-4b88-b958-6bc2fd4f211f"
           }
         ],
         "ui": {
           "active": false,
-          "left": 223.6677,
-          "top": 1020.2262,
-          "zIndex": 5,
+          "left": 137.2677,
+          "top": 916.7605,
+          "zIndex": 24,
           "widthName": 99.56494140625,
           "widthComment": 60,
           "color": "#F600FF"
@@ -456,7 +594,7 @@
         "id": "e3b2bc52-c5fd-403a-8216-8115ac37b8cd"
       },
       {
-        "name": "Emotion",
+        "name": "Emotion_with_BE",
         "comment": "",
         "columns": [
           {
@@ -782,6 +920,138 @@
             "id": "4ba35108-baf4-46bc-b688-27dcdc33840b"
           },
           {
+            "name": "valenceM_SAM",
+            "comment": "",
+            "dataType": "NUMERIC(3,2)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 92.98690795898438,
+              "widthComment": 60,
+              "widthDataType": 87.26692199707031,
+              "widthDefault": 60
+            },
+            "id": "7f2e9218-f80d-44c9-b481-af8adf302a9c"
+          },
+          {
+            "name": "valenceSD_SAM",
+            "comment": "",
+            "dataType": "NUMERIC(3,2)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 97.82289123535156,
+              "widthComment": 60,
+              "widthDataType": 87.26692199707031,
+              "widthDefault": 60
+            },
+            "id": "a50c4d41-c60e-4d4a-9f82-a99a99262283"
+          },
+          {
+            "name": "arousalM_SAM",
+            "comment": "",
+            "dataType": "NUMERIC(3,2)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 91.97293090820312,
+              "widthComment": 60,
+              "widthDataType": 87.26692199707031,
+              "widthDefault": 60
+            },
+            "id": "a3c50eee-cad1-4767-8be1-fabf0d04b391"
+          },
+          {
+            "name": "arousalSD_SAM",
+            "comment": "",
+            "dataType": "NUMERIC(3,2)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 96.80891418457031,
+              "widthComment": 60,
+              "widthDataType": 87.26692199707031,
+              "widthDefault": 60
+            },
+            "id": "dc1512e8-a0df-459d-8d89-c45b65a3c054"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 1008.3278,
+          "top": 720.0106,
+          "zIndex": 2,
+          "widthName": 106.71488952636719,
+          "widthComment": 60,
+          "color": "#00B3FF"
+        },
+        "visible": true,
+        "id": "aa052f9f-cf9c-41bb-866c-48679e98ffdf"
+      },
+      {
+        "name": "Emotion",
+        "comment": "",
+        "columns": [
+          {
+            "name": "imageId",
+            "comment": "",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "c85acdd7-d017-4089-b6f0-70c65363ca76"
+          },
+          {
             "name": "valenceM",
             "comment": "",
             "dataType": "NUMERIC(3,2)",
@@ -802,7 +1072,7 @@
               "widthDataType": 87.26692199707031,
               "widthDefault": 60
             },
-            "id": "7f2e9218-f80d-44c9-b481-af8adf302a9c"
+            "id": "bddce20c-2c37-4ad5-a2df-883bf3b5299e"
           },
           {
             "name": "valenceSD",
@@ -825,7 +1095,53 @@
               "widthDataType": 87.26692199707031,
               "widthDefault": 60
             },
-            "id": "a50c4d41-c60e-4d4a-9f82-a99a99262283"
+            "id": "d944da3d-404f-41c4-a019-d4c9936f1e85"
+          },
+          {
+            "name": "avapM",
+            "comment": "",
+            "dataType": "NUMERIC(3,2)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 87.26692199707031,
+              "widthDefault": 60
+            },
+            "id": "e1303be0-9ba6-4ae7-9664-521de01a4157"
+          },
+          {
+            "name": "avapSD",
+            "comment": "",
+            "dataType": "NUMERIC(3,2)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 87.26692199707031,
+              "widthDefault": 60
+            },
+            "id": "8a4ddb68-4406-4a57-a657-764823cdf7c1"
           },
           {
             "name": "arousalM",
@@ -848,7 +1164,7 @@
               "widthDataType": 87.26692199707031,
               "widthDefault": 60
             },
-            "id": "a3c50eee-cad1-4767-8be1-fabf0d04b391"
+            "id": "a0263c21-5f31-461e-b546-7efd5188ed3c"
           },
           {
             "name": "arousalSD",
@@ -871,20 +1187,20 @@
               "widthDataType": 87.26692199707031,
               "widthDefault": 60
             },
-            "id": "dc1512e8-a0df-459d-8d89-c45b65a3c054"
+            "id": "d88ebc8d-7cc8-4364-aa5f-b2e617a5413d"
           }
         ],
         "ui": {
           "active": false,
-          "left": 1008.3278,
-          "top": 720.0106,
-          "zIndex": 2,
+          "left": 635.0128,
+          "top": 1145.8855,
+          "zIndex": 6,
           "widthName": 60,
           "widthComment": 60,
-          "color": "#00B3FF"
+          "color": "#0068FF"
         },
         "visible": true,
-        "id": "aa052f9f-cf9c-41bb-866c-48679e98ffdf"
+        "id": "a6720574-8ca7-4ee5-ba7c-d8f251be57bb"
       }
     ],
     "indexes": [
@@ -938,7 +1254,7 @@
             "a423a749-9037-4d2d-a9ac-1bc371795c98"
           ],
           "x": 706.8329,
-          "y": 673.4734,
+          "y": 695.8737,
           "direction": "bottom"
         },
         "end": {
@@ -972,8 +1288,8 @@
           "columnIds": [
             "6540bb39-c3e6-4c61-939e-217bd27e26c0"
           ],
-          "x": 467.66769999999997,
-          "y": 1095.7262,
+          "x": 414.36456279296874,
+          "y": 1053.7604999999999,
           "direction": "right"
         },
         "constraintName": "fk_image_to_imagemetadata",
@@ -1005,6 +1321,32 @@
         "constraintName": "fk_image_to_emotion",
         "visible": true,
         "id": "e55e86dc-2b59-42ca-895c-2d7019dd7a75"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneOnly",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "7b23ff3d-0ae9-452e-a416-22be685792d2",
+          "columnIds": [
+            "b7ddca90-a327-460f-8095-41b406e2f4c9"
+          ],
+          "x": 707.6284461669921,
+          "y": 1045.9292,
+          "direction": "bottom"
+        },
+        "end": {
+          "tableId": "a6720574-8ca7-4ee5-ba7c-d8f251be57bb",
+          "columnIds": [
+            "c85acdd7-d017-4089-b6f0-70c65363ca76"
+          ],
+          "x": 773.0542199829101,
+          "y": 1145.8855,
+          "direction": "top"
+        },
+        "constraintName": "fk_image_to_emotion",
+        "visible": true,
+        "id": "5e55b6e4-cb46-4ce0-adb2-50992386b66f"
       }
     ]
   }
