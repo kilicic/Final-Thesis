@@ -19,7 +19,7 @@ const database = knex({
 
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({extended: true}));
 
 app.post('/gallery', (req, res) =>  { 
     
@@ -51,8 +51,8 @@ app.post('/gallery', (req, res) =>  {
         .andWhereRaw(`(valencesd between ${(paramsForQuery[9])[2]} and ${(paramsForQuery[9])[3]})`)
         .andWhereRaw(`(avapm between ${(paramsForQuery[10])[0]} and ${(paramsForQuery[10])[1]})`)
         .andWhereRaw(`(avapsd between ${(paramsForQuery[10])[2]} and ${(paramsForQuery[10])[3]})`)
-        .then(rows => console.log(rows))
-        .then(rows => res.json(rows)).then(console.log(res))
+        .then(rows => res.json(rows))
+        .catch(err => res.status(400).json(err))
     }
     else if (paramsForQuery[0] !== "noName" && paramsForQuery[1] === "noDescription") {
       
@@ -80,8 +80,8 @@ app.post('/gallery', (req, res) =>  {
         .andWhereRaw(`(avapm between ${(paramsForQuery[10])[0]} and ${(paramsForQuery[10])[1]})`)
         .andWhereRaw(`(avapsd between ${(paramsForQuery[10])[2]} and ${(paramsForQuery[10])[3]})`)
         .andWhereRaw(`(name = ${paramsForQuery[0]})`)
-        .then(rows => console.log(rows))
         .then(rows => res.json(rows))
+        .catch(err => res.status(400).json(err))
     }
     else if (paramsForQuery[0] === "noName" && paramsForQuery[1] !== "noDescription") {
         database.select('id','location').from('image')
@@ -108,8 +108,8 @@ app.post('/gallery', (req, res) =>  {
         .andWhereRaw(`(avapm between ${(paramsForQuery[10])[0]} and ${(paramsForQuery[10])[1]})`)
         .andWhereRaw(`(avapsd between ${(paramsForQuery[10])[2]} and ${(paramsForQuery[10])[3]})`)
         .andWhereRaw(`(description = ${paramsForQuery[1]})`)
-        .then(rows => console.log(rows))
         .then(rows => res.json(rows))
+        .catch(err => res.status(400).json(err))
     }
     else {
         console.log("tu")
@@ -138,20 +138,26 @@ app.post('/gallery', (req, res) =>  {
         .andWhereRaw(`(avapsd between ${(paramsForQuery[10])[2]} and ${(paramsForQuery[10])[3]})`)
         .andWhereRaw(`(name = '${paramsForQuery[0]}')`)
         .andWhereRaw(`(description = '${paramsForQuery[1]}')`)
-        .then(rows => console.log(rows))
         .then(rows => res.json(rows))
+        .catch(err => res.status(400).json(err))
     }
    
    
 })
 
+app.post('/picture', (req, res) => {
+    console.log("usla u pic")
+    const {id} = req.body;
+    database.select('image.name', 'image.description', 'imagemetadata.*', 'emotion_with_be.*', 'emotion.*')
+    .from('image')
+    .join('emotion', 'id', 'emotion.imageid').join('emotion_with_be','id', 'emotion_with_be.imageid')
+    .join('imagemetadata', 'id', 'imagemetadata.imageid')
+    .where('id', '=', id)
+    .then(rows => res.json(rows))
+    .catch(err => res.status(400).json(err))
 
-/*app.post('/gallery', (req, res) =>{
-    const {name, description, happines, fear, sadness, surprise, disgust, anger, arousal, valence, approachavoidance, category, group} = req.body
-    database.select('*').from('category').where('id', '=', category).then(data => {
-        res.json(data)
-    })
-})*/
+})
+
 
 
 app.listen(5000, () => {

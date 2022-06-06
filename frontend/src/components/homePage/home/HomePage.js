@@ -1,4 +1,5 @@
 import React, {Component} from "react"
+//import {  } from 'react-router-dom'
 import TitleNaps from "../titleNaps/TitleNaps"
 import NavigationBar from "../navigationBar/NavigationBar"
 import CategoryList from "../category/CategoryList"
@@ -27,7 +28,8 @@ class HomePage extends Component {
           valence: "",
           approachavoidance:"", 
           category: "", 
-          group: ""
+          group: "", 
+          send: []
       }
   } 
   
@@ -108,7 +110,7 @@ class HomePage extends Component {
       console.log(this.state)   
   }
 
-  submitSearch = () => { 
+    submitSearch = () => { 
     fetch('http://localhost:5000/gallery', {
         method: 'post',
         headers: {'Content-Type': 'application/json'
@@ -128,9 +130,14 @@ class HomePage extends Component {
             category: this.state.category, 
             group: this.state.group
         })
-    }).then(res => console.log(res.json()))
-    
-  }
+    }).then(res => res.json()).then(data => this.changePage(data))
+}
+
+changePage(data) {
+    console.log(data)
+    sessionStorage.setItem("data",JSON.stringify(data))
+    window.location.href="/gallery";
+}
 
 
    render() {

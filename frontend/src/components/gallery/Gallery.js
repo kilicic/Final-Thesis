@@ -8,7 +8,7 @@ function Gallery() {
   
     return (
         <div className='gallery-container'>
-            <div className='pic-title'>
+            <div className='title-gallery'>
                 <div className='prvi-title'>
                   <Link to="/" className="navigate-button"><IoMdArrowRoundBack /></Link>
                 </div>
