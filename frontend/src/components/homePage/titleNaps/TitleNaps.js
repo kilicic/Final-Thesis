@@ -1,9 +1,6 @@
 import React, {Component} from "react";
 import { BiSearchAlt} from "react-icons/bi";
 import './TitleNaps.css'; 
-import { Link } from "react-router-dom";
-
-
 
 class TitleNaps extends Component { 
     constructor(props) { 

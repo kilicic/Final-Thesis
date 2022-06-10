@@ -12,7 +12,6 @@ class DescriptionForm extends Component {
   }
   onInputChange = (event) =>{
     this.setState({inputValue: event.target.value});
-    /*console.log(this.state);*/
 }
   render() {
   return(

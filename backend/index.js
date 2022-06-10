@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const pg = require('pg');
-const findPics = require('./helpers/findPics');
+const findParamsForQuery = require('./helpers/findPics');
 
 const knex = require('knex');
 
@@ -24,10 +24,10 @@ app.use(express.urlencoded({extended: true}));
 app.post('/gallery', (req, res) =>  { 
     
     const {name, description, happiness, fear, sadness, surprise, disgust, anger, arousal, valence, approachavoidance, category, group} = req.body
-    let paramsForQuery = findPics(name, description, happiness, fear, sadness, surprise, disgust, anger, arousal, valence, approachavoidance, category, group)
+    let paramsForQuery = findParamsForQuery(name, description, happiness, fear, sadness, surprise, disgust, anger, arousal, valence, approachavoidance, category, group)
 
     if(paramsForQuery[0] === "noName" && paramsForQuery[1] === "noDescription") {
-        console.log("tu1")
+  
         database.select('id','location').from('image')
         .join('emotion', 'id', 'emotion.imageid').join('emotion_with_be','id', 'emotion_with_be.imageid')
         .whereRaw(`(categoryid = ${(paramsForQuery[11])[0]} or categoryid = ${(paramsForQuery[11])[1]} or categoryid = ${(paramsForQuery[11])[2]} 
@@ -112,7 +112,6 @@ app.post('/gallery', (req, res) =>  {
         .catch(err => res.status(400).json(err))
     }
     else {
-        console.log("tu")
         database.select('id','location').from('image')
         .join('emotion', 'id', 'emotion.imageid').join('emotion_with_be','id', 'emotion_with_be.imageid')
         .whereRaw(`(categoryid = ${(paramsForQuery[11])[0]} or categoryid = ${(paramsForQuery[11])[1]} or categoryid = ${(paramsForQuery[11])[2]} 
@@ -146,7 +145,6 @@ app.post('/gallery', (req, res) =>  {
 })
 
 app.post('/picture', (req, res) => {
-    console.log("usla u pic")
     const {id} = req.body;
     database.select('image.name', 'image.description', 'imagemetadata.*', 'emotion_with_be.*', 'emotion.*')
     .from('image')
@@ -155,7 +153,6 @@ app.post('/picture', (req, res) => {
     .where('id', '=', id)
     .then(rows => res.json(rows))
     .catch(err => res.status(400).json(err))
-
 })
 
 

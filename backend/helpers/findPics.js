@@ -1,4 +1,4 @@
-function findPics(name, description, happiness, fear, sadness, surprise, disgust, anger, arousal, valence, approachavoidance, category, group) {
+function findParamsForQuery(name, description, happiness, fear, sadness, surprise, disgust, anger, arousal, valence, approachavoidance, category, group) {
     let valuesForQuery = []
     let valuesCategory = []
     let valuesGroup = []
@@ -110,4 +110,4 @@ function splitStringEmo(str) {
 
 }
 
-module.exports = findPics;
+module.exports = findParamsForQuery;

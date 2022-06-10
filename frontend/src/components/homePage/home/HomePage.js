@@ -1,5 +1,4 @@
 import React, {Component} from "react"
-//import {  } from 'react-router-dom'
 import TitleNaps from "../titleNaps/TitleNaps"
 import NavigationBar from "../navigationBar/NavigationBar"
 import CategoryList from "../category/CategoryList"
@@ -29,7 +28,6 @@ class HomePage extends Component {
           approachavoidance:"", 
           category: "", 
           group: "", 
-          send: []
       }
   } 
   
@@ -75,7 +73,7 @@ class HomePage extends Component {
         }  
       }
       else if(input1==="de") {
-        let emotions = ["valence", "arousal"]
+        let emotions = ["valence", "arousal", "approachavoidance"]
         let attributes = ["minM", "maxM", "minSD", "maxSD"]
         for(let emo of emotions) {
           let currentEmotion = input2[emo]

@@ -30,10 +30,8 @@ class DimEmForm extends Component {
   }
   onInputChange = (key, attribute, event) => {
     let keyAttribute = this.state[key]
-    /*console.log(keyAttribute)*/
     keyAttribute[attribute]=event.target.value
     this.setState({[key]: keyAttribute })
-    /*console.log(this.state)*/
     
 }
 

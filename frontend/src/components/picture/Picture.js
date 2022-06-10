@@ -54,17 +54,11 @@ const Picture = () => {
     str = str + `   <dimension name="valence" value="${allData["valencem"]}"/>\n`;
     str = str + '   </emotion>\n';
     str = str + '</emotionml>'
-    
-    
-
-    
-    
   
     return str;
   }
 
   const fetchData = () => { 
-
     fetch('http://localhost:5000/picture', {
                   method: 'post',
                   headers: {'Content-Type': 'application/json'},
@@ -98,9 +92,6 @@ const Picture = () => {
   useEffect(() => {
     fetchData();
   }, []);
-
-      /*sredi to tu da provjeri v i onda bira jedan od dva returna */
-
       if("h".includes(orientation)) {
         return(
           <div className="picture-layout">
@@ -117,7 +108,7 @@ const Picture = () => {
                 <div className="buttons">
                   <button className="one-button" onClick={downloadImage}>Preuzmi</button>
                   <div className="space"></div>
-                  <button className="one-button" onClick={downloadTxtFile}>Formatiraj</button>
+                  <button className="one-button" onClick={downloadTxtFile}>EmotionML</button>
                 </div>
               </div>
               <div className="data-display-h">
@@ -349,33 +340,11 @@ const Picture = () => {
               </div>
               </div>
               </div>
-  
-          
       )
       
-      }
-    
-
-      
+      }   
     
 }
 export default Picture;
 
 
-/*
-const fetchData = async () => { 
-    try {
-      const res = await fetch('http://localhost:5000/picture', {
-                  method: 'post',
-                  headers: {'Content-Type': 'application/json'},
-                  body: JSON.stringify({
-                  id: idPicVal})
-                  });  
-      const dataRes = res.json()
-      console.log(dataRes)
-  }
-    catch(err) {
-      console.err(err.message);
-    }
-  }
- */
